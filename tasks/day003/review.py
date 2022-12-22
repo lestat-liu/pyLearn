@@ -7,6 +7,39 @@
 # # 知识点回顾
 # 1. 列表
 #   - 列表的增删改查
+# ```python
+# 1.2 列表的索引和切片
+lit = [1, 3, 5, 7, "hello world", [100, 99, 55], (2, 4, 6), {"d": 4, "K": 5}]
+for show in lit:
+    print(show)
+# for i in len(lit):
+#     print(i)
+print("索引和切片")
+print(
+    f"lit[2]:{lit[2]}\nlit[2:]:{lit[2:]}\nlit[:2]:{lit[:2]}\nlit[1:3]:{lit[1:3]}\nlit[2:6:2]:{lit[2:6:2]}\nlit[-2]:{lit[-2]}\n")
+print(f"lit[-4][:2]:{lit[-4][:2]}\n")
+print(f"lit[-4][1]:{lit[-4][1]}\n")
+first, *rest = [1, 2, 3, 4, 5, 6]
+print(first, rest)
+
+
+def product(a, b, c):
+    return a * b * c
+
+
+L = [2, 5, 4]
+print(f"product(*L):{product(*L)}\n")
+print(f"product(2,*L[1:]):{product(2, *L[1:])}\n")
+
+# 1.3 列表的增删改查
+lst = [4, 5, 7, 2, 1, 3, 9, 6, 8, "番薯"]
+print(f"lst:{lst}\n")
+lst.insert(-1, "萝卜生")  # 将萝卜生插入到-1的位置
+print(lst)
+lst2 = ["咸鱼", "豆豉", "榄角", "姜"]
+lst.extend(lst2)  # 将lst2追加的lst结尾 等价于 +=
+print(lst)
+
 #   - 列表的嵌套
 # 2. 元组和元组的嵌套
 # 3. range
