@@ -31,26 +31,33 @@
 
 # 2题
 
-li = [1, 3, 2, "a", 4, "b", 5,"c"]
-print("1)通过对li列表的切⽚形成新的列表l1,l1 = [1,3,2]:", li[:3])
+# li = [1, 3, 2, "a", 4, "b", 5,"c"]
+# print("1)通过对li列表的切⽚形成新的列表l1,l1 = [1,3,2]:", li[:3])
+# # print(":",)
+# print("2)通过对li列表的切⽚形成新的列表l2,l2 = [\"a\",4,\"b\"]:", li[3:6])
+# l3 = li[:3] + li[3:7]
+# l3.remove("a")
+# l3.remove("b")
+# l3.remove(3)
+# # l3 = filter(str.isdigit, [list(ll) for ll in li])
+# print("3)通过对li列表的切⽚形成新的列表l3,l3 = [\"1,2,4,5]:", l3)
+# l4  =  []
+# l4.append(li[1])
+# l4.append(li[3])
+# l4.append(li[5])
+# print("4)通过对li列表的切⽚形成新的列表l4,l4 = [3,'a','b']:", l4)
+# l5 = list(li[-1])
+# print("5)通过对li列表的切⽚形成新的列表l5,l5 = [\"c\"]:", l5)
+# l4.reverse()
+# l6 = l4
+# print("6)通过对li列表的切⽚形成新的列表l6,l6 = [\"b\",\"a\",3]:", l6)
+
+# 3题
+
+# lis = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+lst = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 0], [11, 22, 33]]
+lis1 = [j for i in lst for j in i]
+print(lis1)
+# print("1)将列表lis中的\"tt\"变成⼤写（⽤两种⽅式）:", lis[3][2][1][0].upper())
 # print(":",)
-print("2)通过对li列表的切⽚形成新的列表l2,l2 = [\"a\",4,\"b\"]:", li[3:6])
-l3 = li[:3] + li[3:7]
-l3.remove("a")
-l3.remove("b")
-l3.remove(3)
-# l3 = filter(str.isdigit, [list(ll) for ll in li])
-print("3)通过对li列表的切⽚形成新的列表l3,l3 = [\"1,2,4,5]:", l3)
-l4  =  []
-l4.append(li[1])
-l4.append(li[3])
-l4.append(li[5])
-print("4)通过对li列表的切⽚形成新的列表l4,l4 = [3,'a','b']:", l4)
-l5 = list(li[-1])
-print("5)通过对li列表的切⽚形成新的列表l5,l5 = [\"c\"]:", l5)
-l4.reverse()
-l6 = l4
-print("6)通过对li列表的切⽚形成新的列表l6,l6 = [\"b\",\"a\",3]:", l6)
-
-
 
