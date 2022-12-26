@@ -93,9 +93,9 @@ for index, H in enumerate(lst):
 
 tup = (1, 3, 5, 7, {"h": 89, "i": 90}, [1, 2, 3, 4, 5], (5, 6, 7, 8, (9, 10, 11, 12)))
 print(tup)
-I = list(tup)
-print(I)
-J = tuple(I)
+Ii = list(tup)
+print(Ii)
+J = tuple(Ii)
 print(J)
 connect = tup[:4] + J
 print(connect)
@@ -118,23 +118,111 @@ for T in range(15, 1, -2):
     print(f"range(15,1,-2):{T}")
 
 # 4. 字典
+
 '''
 在dict中key是唯⼀的(可哈希). 在保存的时候, 根据key来计算出⼀个内存地址. 然后将key-value保存在这个地址中.
 已知的可哈希(不可变)的数据类型: int, str, tuple, bool
 不可哈希(可变)的数据类型: list, dict, set
 '''
-Dic = {"Fist": 67, "Select": "select hello from K", "Sale": "True","Source": "[78,98,63,45,21]"}
+Dic = {"Fist": 67, "Select": "select hello from K", "Sale": "True",
+       "Source": [78, 98, (45, 56, 48, 2655, 15, [1, 8, 29, {1: 15, 45: 152}]), 63, 45, 21]}
+Dic3 = {"1949": {"7": "第一次中东战争结束", "8": "苏联原子弹试爆成功",
+                 "10": {"1": "中华人民共和国中央人民政府成立", "2": "苏联政府决定同新中国建立外交关系",
+                        "9": "中国人民政治协商会议第一届全国委员会第一次会议召开",
+                        "13": "中国新民主主义青年团中央召开常委扩大会议，通过建立中国少年儿童队的决议(少先队)"},
+                 "12": "国民政府退守台湾"}}
 #  key相同，后面的会覆盖前面的value
-print(f"Dic:{Dic}")
+print(f"Dic字典操作:{Dic}")
 
 #    - 字典的增删改查
-# 增
+
+# 增 （4法）
+#  浅拷贝、赋值增改、setdefault查增、fromkeys序列号新增字典
 Dic1 = Dic.copy()  # Dic 的浅拷贝
-print(f"Dic1:{Dic1}")
+print(f"Dic1.copy浅拷贝:{Dic1}")
 Dic["Order"] = "(1,2,3,4,5)"
-print(f"Dic:{Dic}")
+Dic1["Order"] = "(4357,6678,2564,3765)"
+Dic1["SalesID"] = "(2564,3765)"
+print(f"Dic字典增键值:{Dic}")
+# Dir["w"] = 1574 未定义的字典不能改，字典本身不存在
+# print(f"Dic1:{Dir}")
+# 查询python的键值，不存在则添加
+Dic.setdefault("python", "SHA256:11a4a60b518bf24989d481468076e5d5982884626aed9faeb35b8576fcd223e1")
+print(f"Dic，查询插入:{Dic}")
+Dic.update(Dic1)
+Lar = Dic
+print(f"Dic1:{Dic1}")
+print(f"Lar:{Lar}")
+print(f"Dic，更新update合并Dic1:{Dic}")
+
+# fromkeys创建一个新字典，算是字典增的功能
+
+print(
+    f"Dic.fromkeys('Select','值为none或输出示范'):{Dic.fromkeys('Select', '值为none或输出示范')}")  # 这里有疑问，输出不符合预期，Select键被分割输出
+# print(Dic.fromkeys("Select", "v"))
+Dic["w"] = 1574
+print(f"Dic1:{Dic}")
+print(f"Dic.fromkeys('w','值为none或输出示范'):{Dic.fromkeys('w', '值为none或输出示范')}")  # 这里有疑问，输出不符合预期，Select键被分割输出
+# 以上用法不对，实际上 Python 字典(Dictionary) fromkeys() 函数用于创建一个新字典，以序列seq中元素做字典的键，value为字典所有键对应的初始值。
+SeqList = ['李白', '杜甫', '白居易', '白居易', '孟浩然']  # 打牌的人,没有聚众赌博的意思，可能赌酒什么的
+B = {}
+Bet = B.fromkeys(SeqList, 1500)  # 每人下注1500两 ，还有列表去从功能
+print(f"每人下注Bet：{Bet}")
+
+# 删
+
+# pop删键/键值 del["key"],不存在返回KeyError
+# popitem 删键值，不存在返回KeyError
+# clear 清空字典
+
+Dic.pop("Fist")
+print(f"Dic删除Fist键:{Dic}")
+Dic.pop("Fist", "Fist not in Dic")  # 有疑问，不生效
+# Dic.pop() 错误用法
+# print(f"Dic pop删除键:{Dic}")
+Dic.popitem()  # 删除字典内任意一对键值（不能指定键值，默认从队尾开始删），不在返回 TypeError: popitem() takes no arguments (2 given)
+Dic.popitem()  # 删除字典内任意一对键值（不能指定键值,默认从队尾开始删），不在返回 TypeError: popitem() takes no arguments (2 given)
+print(f"Dic popitem删除任意键值:{Dic}")
+print(f"Dic1:{Dic1}")
+Dic.clear()
+print(f"Dic clear字典:{Dic}")
+Dic = Dic1.copy()  # Dic 的浅拷贝
+del Dic["Fist"]  # 删除键值      # 有疑问，要换成Lar（Lar = Dic）删除出错
+print(f"Dic del删除Fist键值:{Dic}")
+
+# 改  同增差不多直接赋值增改
+
+# 查
+
+# get 按键查，不在返回none或指定值
+# 返回视图 keys items values 返回键，项目，和值视图
+
+print(f"Dic.get(\"Select\"):{Dic.get('Select')}")
+print(f"Dic.get(\"Selec\"):{Dic.get('Selec')}")
+print(f"Dic.get('selec','null'):{Dic.get('Selec', 'null')}")
+
+# 视图
+print(f"Dic.keys():{Dic.keys()}")
+print(f"Dic.values():{Dic.values()}")
+print(f"Dic.items():{Dic.items()}\n")
+
+for k, v in Dic.items():
+    print(k, "→", v)
 
 #    - 字典的嵌套
+
+print(f"Dic:{Dic}")
+print("Dic.get('Source'):", Dic.get('Source'))
+print("Dic.get('Source')[2][5][3].get(45):", Dic.get('Source')[2][5][3].get(45))
+print("Dic['Source']:", Dic["Source"])
+print("Dic['Source'][2][5][3].get(45):", Dic["Source"][2][5][3].get(45))
+Dic["Source"][2][5][3]["45"] = 125  # 有疑问，为啥没改变45键的值
+print("Dic['Source'][2][5][3].get(45):", Dic["Source"][2][5][3].get(45))
+
+
+for ke,vl in Dic3.items():
+    print(ke, " ", vl)
+
 # 5. 集合
 # Python中的集合跟数学上的集合是一致的，不允许有重复元素，而且可以进行交集、并集、差集等运算。
 #  ![img.png](img.png)
