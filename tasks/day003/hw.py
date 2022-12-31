@@ -55,9 +55,108 @@
 # 3题
 
 # lis = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
-lst = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 0], [11, 22, 33]]
-lis1 = [j for i in lst for j in i]
-print(lis1)
+# print("1）法一：", lis[3][2][1][0].upper(), "1）法二：", lis[-3][-2][1][0].upper())
+# lis[1] = 100
+# lis[3][2][1][1] = 100
+# print("2)法一：", lis)
+# lis2 = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+# lis2.remove(3)
+# lis2[2][2][1].remove(3)
+# lis2.insert(1, 100)
+# lis2[3][2][1].insert(1, 100)
+# print("2)法二：", lis2)
+# lis3 = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+# lis3[3][2][1][2] = 101
+# print("3)法一：", lis3)
+# lis3[3][2][1].remove(101)
+# lis3[3][2][1].insert(2, 101)
+# print(lis3)
+# lst = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 0], [11, 22, 33]]
+# lis1 = [j for i in lst for j in i]
+# print(lis1)
 # print("1)将列表lis中的\"tt\"变成⼤写（⽤两种⽅式）:", lis[3][2][1][0].upper())
 # print(":",)
 
+# 第4题：
+# li = ["lex", "eric", "rain"]
+# su1 = "_"
+# print(su1.join(li))
+
+# 第5题
+# li = ["alex", "WuSir", "ritian", "barry", "wenzhou"]
+# for key in range(len(li)):
+#     print("key:", key)
+
+# 第6题
+# lst = []
+# for Num in range(1, 100):
+#     if Num % 2 == 0:
+#         lst.append(Num)
+# print(lst)
+
+# 第7题
+# lst = []
+# for Num in range(1, 51):
+#     if Num % 3 == 0:
+#         lst.append(Num)
+# print(lst)
+
+# 第8题
+# lst = []
+# for Num in range(100, 0, -1):
+#         lst.append(Num)
+# print(lst)
+
+# 第9题
+# lst = []
+# for Num in range(100, 9, -1):
+#     if Num % 2 == 0:
+#         lst.append(Num)
+# print(lst)
+# lst = [Num for Num in range(100, 9, -1) if Num % 2 == 0]
+# lst =[Num for Num in range(100, 0, -1)]
+# print(lst)
+
+
+# 第10题：
+# lst =[Num for Num in range(1, 31)]
+# for key, value in enumerate(lst):
+#     if value % 3 == 0:
+#         lst.remove(value)
+#         lst.insert(key, "*")
+# print(lst)
+
+
+# 第11题：
+# li1 = []
+# li = ["TaiBai ", "le xC", "AbC ", "egon", " ri TiAn", "WuSir", " aqc"]
+# for value in li:
+#     value2 = value.split(" ")
+#     value1 = "".join(value2)
+#     if value1.startswith("A") or value1.startswith("a") or value1.endswith("c"):
+#         li1.append(value1)
+# print(li1)
+
+# 第12题
+li1 = []
+li = ["苍老师", "东京热", "武藤兰", "波多野结衣"]
+se1 = set(li)
+ca = set(input("请输入评论内容："))
+uu = se1 & ca
+# for cp in (se1 & ca):
+    # pu = "*"*len(cp)
+    # li1.append(pu)
+    # li1.append(ca)
+print(se1)
+print(ca)
+print(uu)
+
+
+
+
+
+# lst2 = [num for num in lst if num % 4 == 0]
+# print(lst2)
+
+# list_1 = [x for x in range(1, 10) if x % 2 == 0]
+# print(list_1)

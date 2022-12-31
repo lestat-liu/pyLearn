@@ -148,26 +148,114 @@ print("6)通过对li列表的切⽚形成新的列表l6,l6 = [\"b\",\"a\",3]:", 
     2)将列表中的数字3变成字符串"100"（⽤两种⽅式）。
     3)将列表中的字符串"1"变成数字101（⽤两种⽅式）。
 ```
+```python
+lis = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+print("1）法一：", lis[3][2][1][0].upper(), "1）法二：", lis[-3][-2][1][0].upper())
+lis[1] = 100
+lis[3][2][1][1] = 100
+print("2)法一：", lis)
+lis2 = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+lis2.remove(3)
+lis2[2][2][1].remove(3)
+lis2.insert(1, 100)
+lis2[3][2][1].insert(1, 100)
+print("2)法二：", lis2)
+lis3 = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+lis3[3][2][1][2] = 101
+print("3)法一：", lis3)
+lis3[3][2][1].remove(101)
+lis3[3][2][1].insert(2, 101)
+print(lis3)
+```
+
 ### 4,请⽤代码实现：
 ```python
 li = ["lex", "eric", "rain"]
     利⽤下划线将列表的每⼀个元素拼接成字符串"lex_eric_rain"
+```
+```python
+# 第4题：
+li = ["lex", "eric", "rain"]
+su1 = "_"
+print(su1.join(li))
 ```
 
 ### 5.利⽤for循环和range打印出下⾯列表的索引。
 ```
     li = ["alex", "WuSir", "ritian", "barry", "wenzhou"]
 ```
+```python
+# 第5题
+li = ["alex", "WuSir", "ritian", "barry", "wenzhou"]
+for key in range(len(li)):
+    print("key:", key)
+```
 ### 6.利⽤for循环和range找出100以内所有的偶数并将这些偶数插⼊到⼀个新列表中。
-
+```python
+# 第6题
+lst =[Num for Num in range(1, 101) if Num % 2 == 0]
+# lst = []
+# for Num in range(1, 101):
+#     if Num % 2 == 0:
+#         lst.append(Num)
+# print(lst)
+```
 ### 7.利⽤for循环和range 找出50以内能被3整除的数，并将这些数插⼊到⼀个新列表中。
+```python
 
+# 第7题
+lst =[Num for Num in range(1, 51) if Num % 3 == 0]
+# lst = []
+# for Num in range(1, 51):
+#     if Num % 3 == 0:
+#         lst.append(Num)
+# print(lst)
+```
 ### 8.利⽤for循环和range从100~1，倒序打印。
+```python
+# 第8题
+lst =[Num for Num in range(100, 0, -1)]
+# lst = []
+# for Num in range(100, 0, -1):
+#         lst.append(Num)
+# print(lst)
+```
 ### 9.利⽤for循环和range从100~10，倒序将所有的偶数添加到⼀个新列表中，然后对列表的元素进⾏筛选，将能被4整除的数留下来。
+```python
+# 第9题
+lst = [Num for Num in range(100, 9, -1) if Num % 2 == 0]
+print(lst)
+lst2 = [num for num in lst if num % 4 == 0]
+print(lst2)
+# lst = []
+# for Num in range(100, 9, -1):
+#     if Num % 2 == 0:
+#         lst.append(Num)
+# print(lst)
+```
 ### 10，利⽤for循环和range，将1-30的数字⼀次添加到⼀个列表中，并循环这个列表，将能被3整除的数改成*。
+```python
+# 第10题：
+lst =[Num for Num in range(1, 31)]
+for key, value in enumerate(lst):
+    if value % 3 == 0:
+        lst.remove(value)
+        lst.insert(key, "*")
+print(lst)
+```
 ### 11，查找列表li中的元素，移除每个元素的空格，并找出以"A"或者"a"开头，并以"c"结尾的所有元素，并添加到⼀个新列表中,最后循环打印这个新列表。
 ```
 li = ["TaiBai ", “le xC", “AbC ", "egon", " ri TiAn", "WuSir", " aqc"]
+```
+```python
+li1 = []
+li = ["TaiBai ", "le xC", "AbC ", "egon", " ri TiAn", "WuSir", " aqc"]
+for value in li:
+    value2 = value.split(" ")
+    value1 = "".join(value2)
+    if value1.startswith("A") or value1.startswith("a") or value1.endswith("c"):
+        li1.append(value1)
+print(li1)
 ```
 ### 12，开发敏感词语过滤程序，提示⽤户输⼊评论内容，如果⽤户输⼊的内容中包含特殊的字符：
 ```python
