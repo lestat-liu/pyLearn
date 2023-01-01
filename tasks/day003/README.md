@@ -176,8 +176,8 @@ li = ["lex", "eric", "rain"]
 ```python
 # 第4题：
 li = ["lex", "eric", "rain"]
-su1 = "_"
-print(su1.join(li))
+# su1 = "_"
+print("_".join(li))
 ```
 
 ### 5.利⽤for循环和range打印出下⾯列表的索引。
