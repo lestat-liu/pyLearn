@@ -264,6 +264,34 @@ print(li1)
     加到⼀个列表中；如果⽤户输⼊的内容没有敏感词汇，则直接添加到上述的列
     表中。
 ```
+```python
+# 第12题
+## 法1(集合实现)：
+li1 = []
+li = ["苍老师", "东京热", "武藤兰", "波多野结衣"]
+se1 = set(li)
+ca = input("请输入评论内容：")
+kk = set()
+kk.add(ca)
+# uu = se1 & kk
+if se1 & kk:
+    li1.append("*"*len(ca))
+else:
+    li1.append(ca)
+print(se1)
+print(kk)
+print(li1)
+
+## 法2（列表实现）：
+ca1 = input("请输入评论内容2：")
+li3 = [ca1]
+li4 = []
+if ca1 in li:
+    li4.append("*"*len(ca1))
+else:
+    li4.append(ca1)
+print(li4)
+```
 ### 13，有如下列表
 ```
 li = [1, 3, 4, "lex", [3, 7, 8, "TaiBai"], 5, "RiTiAn"]
@@ -280,13 +308,44 @@ li = [1, 3, 4, "lex", [3, 7, 8, "TaiBai"], 5, "RiTiAn"]
 5
 ritian
 ```
-### 14. 把班级学⽣数学考试成绩录⼊到⼀个列表中: 并求平均值. 要求: 录⼊的时候要带着⼈名录⼊, 例如: 张三_44
+```python
+li = [1, 3, 4, "lex", [3, 7, 8, "TaiBai"], 5, "RiTiAn"]
+for su in li:
+    if type(su) != list:
+        print(su)
+    else:
+        for su1 in su:
+            print(su1)
+```
 
+### 14. 把班级学⽣数学考试成绩录⼊到⼀个列表中: 并求平均值. 要求: 录⼊的时候要带着⼈名录⼊, 例如: 张三_44
+```python
+# 第14题
+Sum1 = []
+while True:
+    score = input("请输入您的姓名和成绩格式如：张三_44,输入完毕输#号结束：")
+    if score == "#":
+        break
+    else:
+        Sm = int("".join(list(filter(str.isdigit, score))))
+        Sum1.append(Sm)
+print("数学考试平均分为：", sum(Sum1)/len(Sum1))
+```
 ### 15. 敲七游戏. 从0开始数数. 遇到7或者7的倍数要在桌上敲⼀下. 编程来完成敲七
 ```
 如：输入10
 lst = [1,2,3,4,5,6,"咣",8,9,10]
 
+```
+```python
+# 第15题
+Qqn = int(input("请输入一个敲7数字："))
+lst = [Num for Num in range(1, Qqn)]
+for key, value in enumerate(lst):
+    if value % 7 == 0:
+        lst.remove(value)
+        lst.insert(key, "咣")
+print(lst)
 ```
 ### 16. (升级题) 编写程序. 完成⼼动⼥⽣的筛选. (升级题)
 ```python

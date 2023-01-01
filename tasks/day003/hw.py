@@ -138,22 +138,65 @@
 # print(li1)
 
 # 第12题
-li1 = []
-li = ["苍老师", "东京热", "武藤兰", "波多野结衣"]
-se1 = set(li)
-ca = set(input("请输入评论内容："))
-uu = se1 & ca
-# for cp in (se1 & ca):
-    # pu = "*"*len(cp)
-    # li1.append(pu)
-    # li1.append(ca)
-print(se1)
-print(ca)
-print(uu)
+## 法1(集合实现)：
+# li1 = []
+# li = ["苍老师", "东京热", "武藤兰", "波多野结衣"]
+# se1 = set(li)
+# ca = input("请输入评论内容：")
+# kk = set()
+# kk.add(ca)
+# # uu = se1 & kk
+# if se1 & kk:
+#     li1.append("*"*len(ca))
+# else:
+#     li1.append(ca)
+# print(se1)
+# print(kk)
+# print(li1)
+#
+# ## 法2（列表实现）：
+# ca1 = input("请输入评论内容2：")
+# li3 = [ca1]
+# li4 = []
+# if ca1 in li:
+#     li4.append("*"*len(ca1))
+# else:
+#     li4.append(ca1)
+# print(li4)
+
+# 第13题
+# li = [1, 3, 4, "lex", [3, 7, 8, "TaiBai"], 5, "RiTiAn"]
+#
+# # co = [su if type(su) != list else su1 for su1 in su for su in li]
+#
+# for su in li:
+#     if type(su) != list:
+#         print(su)
+#     else:
+#         for su1 in su:
+#             print(su1)
 
 
+# 第14题
+# Sum1 = []
+# while True:
+#     score = input("请输入您的姓名和成绩格式如：张三_44,输入完毕输#号结束：")
+#     if score == "#":
+#         break
+#     else:
+#         Sm = int("".join(list(filter(str.isdigit, score))))
+#         Sum1.append(Sm)
+# print("数学考试平均分为：", sum(Sum1)/len(Sum1))
 
-
+# 第15题
+Qqn = int(input("请输入一个敲7数字："))
+lst = [Num for Num in range(1, Qqn)]
+for key, value in enumerate(lst):
+    if value % 7 == 0:
+        lst.remove(value)
+        lst.insert(key, "咣")
+print(lst)
+# print(type(li))
 
 # lst2 = [num for num in lst if num % 4 == 0]
 # print(lst2)
