@@ -411,8 +411,7 @@ for key, value in enumerate(nlis2):
   - list.count() # 统计元素频次
   - list.index() # 找出元素索引位置
 ## 2，默写第,13题的实现的代码。
-
-
+遍历迭代，不是列表输出
 
 # 字典作业
 
