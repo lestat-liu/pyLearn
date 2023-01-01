@@ -382,7 +382,8 @@ for key, value in enumerate(nlis1):
 while k:
     index1 = int(input("请最终选择一位心仪女生序号输入："))
     # if j >= index1 >= 0:
-    nlis2.append(nlis1[index1])
+    nlis2.append(nlis1[in
+                 dex1])
     # else:
     #     print("请输入正确序号!")
     k -= 1
@@ -392,7 +393,25 @@ for key, value in enumerate(nlis2):
 # 列表默写内容
 ## 1，将列表的增删改查不同的⽅法全部写出来，
   - 例如：增：有三种，append：在后⾯添加。Insert按照索引添加，extend：迭代着添加。
+- 增
+  - List.append()
+  - insert(index,x)
+  - list.copy()
+  - list.extend
+- 删
+  - list.pop()
+  - list.remove()
+  - del
+  - list.clear()
+- 改
+  - lis[index] = "string"
+  - remove() --- append()/insert() 先删后插入
+- 查
+  - for 迭代
+  - list.count() # 统计元素频次
+  - list.index() # 找出元素索引位置
 ## 2，默写第,13题的实现的代码。
+
 
 
 # 字典作业
