@@ -356,6 +356,39 @@ print(lst)
 运⾏效果:
 
 ``` 
+```python
+# 第16题
+nlis = []
+nlis1 = []
+nlis2 = []
+i = 10
+j = 3
+k = 1
+while i:
+    name = input("请依次输入十位心仪女生姓名：")
+    nlis.append(name)
+    i -= 1
+for key, value in enumerate(nlis):
+    print("女生名字为：", value, "序号为：", key)
+while j:
+    index = int(input("请依次选择三位心仪女生序号输入："))
+    # if i >= index >= 0:
+    nlis1.append(nlis[index])
+    # else:
+    #     print("请输入正确序号!")
+    j -= 1
+for key, value in enumerate(nlis1):
+    print("女生名字为：", value, "序号为：", key)
+while k:
+    index1 = int(input("请最终选择一位心仪女生序号输入："))
+    # if j >= index1 >= 0:
+    nlis2.append(nlis1[index1])
+    # else:
+    #     print("请输入正确序号!")
+    k -= 1
+for key, value in enumerate(nlis2):
+    print("用户心动的女生是", value)
+```
 # 列表默写内容
 ## 1，将列表的增删改查不同的⽅法全部写出来，
   - 例如：增：有三种，append：在后⾯添加。Insert按照索引添加，extend：迭代着添加。

@@ -189,13 +189,50 @@
 # print("数学考试平均分为：", sum(Sum1)/len(Sum1))
 
 # 第15题
-Qqn = int(input("请输入一个敲7数字："))
-lst = [Num for Num in range(1, Qqn)]
-for key, value in enumerate(lst):
-    if value % 7 == 0:
-        lst.remove(value)
-        lst.insert(key, "咣")
-print(lst)
+# Qqn = int(input("请输入一个敲7数字："))
+# lst = [Num for Num in range(1, Qqn)]
+# for key, value in enumerate(lst):
+#     if value % 7 == 0:
+#         lst.remove(value)
+#         lst.insert(key, "咣")
+# print(lst)
+
+# 第16题
+nlis = []
+nlis1 = []
+nlis2 = []
+i = 10
+j = 3
+k = 1
+while i:
+    name = input("请依次输入十位心仪女生姓名：")
+    nlis.append(name)
+    i -= 1
+for key, value in enumerate(nlis):
+    print("女生名字为：", value, "序号为：", key)
+while j:
+    index = int(input("请依次选择三位心仪女生序号输入："))
+    # if i >= index >= 0:
+    nlis1.append(nlis[index])
+    # else:
+    #     print("请输入正确序号!")
+    j -= 1
+for key, value in enumerate(nlis1):
+    print("女生名字为：", value, "序号为：", key)
+while k:
+    index1 = int(input("请最终选择一位心仪女生序号输入："))
+    # if j >= index1 >= 0:
+    nlis2.append(nlis1[index1])
+    # else:
+    #     print("请输入正确序号!")
+    k -= 1
+for key, value in enumerate(nlis2):
+    print("用户心动的女生是", value)
+# 第15题
+
+
+
+
 # print(type(li))
 
 # lst2 = [num for num in lst if num % 4 == 0]
