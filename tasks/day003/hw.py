@@ -198,37 +198,85 @@
 # print(lst)
 
 # 第16题
-nlis = []
-nlis1 = []
-nlis2 = []
-i = 10
-j = 3
-k = 1
-while i:
-    name = input("请依次输入十位心仪女生姓名：")
-    nlis.append(name)
-    i -= 1
-for key, value in enumerate(nlis):
-    print("女生名字为：", value, "序号为：", key)
-while j:
-    index = int(input("请依次选择三位心仪女生序号输入："))
-    # if i >= index >= 0:
-    nlis1.append(nlis[index])
-    # else:
-    #     print("请输入正确序号!")
-    j -= 1
-for key, value in enumerate(nlis1):
-    print("女生名字为：", value, "序号为：", key)
-while k:
-    index1 = int(input("请最终选择一位心仪女生序号输入："))
-    # if j >= index1 >= 0:
-    nlis2.append(nlis1[index1])
-    # else:
-    #     print("请输入正确序号!")
-    k -= 1
-for key, value in enumerate(nlis2):
-    print("用户心动的女生是", value)
-# 第15题
+# nlis = []
+# nlis1 = []
+# nlis2 = []
+# i = 10
+# j = 3
+# k = 1
+# while i:
+#     name = input("请依次输入十位心仪女生姓名：")
+#     nlis.append(name)
+#     i -= 1
+# for key, value in enumerate(nlis):
+#     print("女生名字为：", value, "序号为：", key)
+# while j:
+#     index = int(input("请依次选择三位心仪女生序号输入："))
+#     # if i >= index >= 0:
+#     nlis1.append(nlis[index])
+#     # else:
+#     #     print("请输入正确序号!")
+#     j -= 1
+# for key, value in enumerate(nlis1):
+#     print("女生名字为：", value, "序号为：", key)
+# while k:
+#     index1 = int(input("请最终选择一位心仪女生序号输入："))
+#     # if j >= index1 >= 0:
+#     nlis2.append(nlis1[index1])
+#     # else:
+#     #     print("请输入正确序号!")
+#     k -= 1
+# for key, value in enumerate(nlis2):
+#     print("用户心动的女生是", value)
+# 字典作业
+# 第1题
+# - a元组是有序固定序列，不能删改任意数据，但元素是可修改的数据（如列表）能更改元素内部数据。
+# - b. 不可修改
+# - c. 列表类型
+# - d.元组类型，不能修改,不可添加
+# tu = ("lex", [11, 22, {"k1": 'v1', "k2": ["age", "name"], "k3": (11,22,33)}, 44])
+# # tu[0] = 34 #不可修改
+# print(tu[0])
+# tu[1][2].get("k2").append("seven")
+# print(tu[1][2].get("k2"))  # c
+# print(tu[1][2].get("k3"))  # d
+
+# 第2题
+# dic = {'k1': "v1", "k2": "v2", "k3": [11,22,33]}
+# print(dic.keys())  # a
+# print(dic.values())  # b
+# print(dic.items())  # c
+# dic["k4"] = "v4"  # d
+# print(dic)
+# dic["k1"] = "alex"  # e
+# print(dic)
+# dic.get("k3").append(44)  # f
+# print(dic)
+# dic.get("k3").insert(0, 18)  # g
+# print(dic)
+
+# 第3题
+av_catalog = {
+"欧美":{
+    "www.youporn.com": ["很多免费的,世界最大的","质量一般"],
+    "www.pornhub.com": ["很多免费的,也很大","质量比yourporn高点"],
+    "letmedothistoyou.com": ["多是自拍,高质量图片很多","资源不多,更新慢"],
+    "x-art.com":["质量很高,真的很高","全部收费,屌丝请绕过"]
+},
+"日韩":{
+    "tokyo-hot":["质量怎样不清楚,个人已经不喜欢日韩范了","verygood"]
+},
+"大陆":{
+    "1024":["全部免费,真好,好人一生平安","服务器在国外,慢"]
+}
+}
+
+av_catalog.get("欧美").get("www.youporn.com").insert(1, "量很大")  # a
+print(av_catalog)
+av_catalog.get("欧美").get("x-art.com").insert(1, "量很大")  # a
+
+
+
 
 
 

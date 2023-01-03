@@ -411,7 +411,7 @@ for key, value in enumerate(nlis2):
   - list.count() # 统计元素频次
   - list.index() # 找出元素索引位置
 ## 2，默写第,13题的实现的代码。
-遍历迭代，不是列表输出
+第一个for遍历列表，不是列表输出，是列表类型继续for遍历输出
 
 # 字典作业
 
@@ -421,7 +421,19 @@ for key, value in enumerate(nlis2):
     b. 请问tu变量中的第一个元素 "lex" 是否可被修改？
     c. 请问tu变量中的"k2"对应的值是什么类型？是否可以被修改？如果可以，请在其中添加一个元素 "Seven"
     d. 请问tu变量中的"k3"对应的值是什么类型？是否可以被修改？如果可以，请在其中添加一个元素 "Seven"
-
+```python
+# 第1题
+# - a元组是有序固定序列，不能删改任意数据，但元素是可修改的数据（如列表）能更改元素内部数据。
+# - b. 不可修改
+# - c. 列表类型
+# - d.元组类型，不能修改,不可添加
+tu = ("lex", [11, 22, {"k1": 'v1', "k2": ["age", "name"], "k3": (11,22,33)}, 44])
+# tu[0] = 34 #不可修改
+print(tu[0])
+tu[1][2].get("k2").append("seven")
+print(tu[1][2].get("k2"))  # c
+print(tu[1][2].get("k3"))  # d
+```
 ### 2， 字典dic,dic = {'k1': "v1", "k2": "v2", "k3": [11,22,33]}
     a.请循环输出所有的key
     b.请循环输出所有的value
@@ -430,6 +442,21 @@ for key, value in enumerate(nlis2):
     e. 请在修改字典中 "k1" 对应的值为 "alex"，输出修改后的字典
     f. 请在k3对应的值中追加一个元素 44，输出修改后的字典
     g. 请在k3对应的值的第 1 个位置插入个元素 18，输出修改后的字典
+```python
+# 第2题
+dic = {'k1': "v1", "k2": "v2", "k3": [11,22,33]}
+print(dic.keys())  # a
+print(dic.values())  # b
+print(dic.items())  # c
+dic["k4"] = "v4"  # d
+print(dic)
+dic["k1"] = "alex"  # e
+print(dic)
+dic.get("k3").append(44)  # f
+print(dic)
+dic.get("k3").insert(0, 18)  # g
+print(dic)
+```
 
 ### 3，题目如下：
     av_catalog = {
