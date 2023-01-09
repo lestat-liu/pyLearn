@@ -65,7 +65,7 @@ print(set1 >= set3)
 
 ---
 ### 1，写代码，有如下列表，按照要求实现每⼀个功能
-```python
+```
     li = ["lex", "WuSi", "ruantian", "barry", "wenzhou"]
     1)计算列表的⻓度并输出
     2)列表中追加元素"seven",并输出添加后的列表
@@ -79,8 +79,35 @@ print(set1 >= set3)
     10)请将列表所有得元素反转，并输出反转后的列表
     11)请计算出"lex"元素在列表li中出现的次数，并输出该次数。
 ```
-### 2，写代码，有如下列表，利⽤切⽚实现每⼀个功能
 ```python
+# 1题
+li = ["lex", "WuSi", "ruantian", "barry", "wenzhou"]
+print("1.1 li长度为：", len(li))
+li.append('seven')
+print("2)列表中追加元素' seven ',并输出添加后的列表li:", li)
+li.insert(0, 'Tony')
+print("3)请在列表的第1个位置插⼊元素Tony,并输出添加后的列表:", li)
+li.insert(1, 'kelly')
+print("4)请在列表的第2个位置插⼊元素kelly,并输出添加后的列表:", li)
+print("5)……每⼀个元素添加到列表li中，⼀⾏代码实现，不允许循环添加:", li + [1,"a",3,4,"heart"])
+# s = "qwert"
+# li.extend(s)
+# print(li)
+print("6)请将字符串s = qwert 的每⼀个元素添加到列表li中，⼀⾏代码实现，不允许循环添加。:", li + list({}.fromkeys("qwert").keys()))
+li.remove("lex")
+print("7)请删除列表中的元素\"eric\"(这里搞错了吧，我随便删一个比如lex吧),并输出添加后的列表:", li)
+li.pop(1)
+print("8)请删除列表中的第2个元素，并输出删除的元素和删除元素后的列表:", li)
+del li[1:4]
+print("9)请删除列表中的第2⾄4个元素，并输出删除元素后的列表:", li)
+li.reverse()
+print("10)请将列表所有得元素反转，并输出反转后的列表:", li)
+# print(":",)
+print("11)请计算出\"seven\"元素在列表li中出现的次数，并输出该次数。:", li.count("seven"))
+```
+
+### 2，写代码，有如下列表，利⽤切⽚实现每⼀个功能
+```
 li = [1, 3, 2, "a", 4, "b", 5,"c"]
 1)通过对li列表的切⽚形成新的列表l1,l1 = [1,3,2]
 2)通过对li列表的切⽚形成新的列表l2,l2 = ["a",4,"b"]
@@ -89,34 +116,146 @@ li = [1, 3, 2, "a", 4, "b", 5,"c"]
 5)通过对li列表的切⽚形成新的列表l5,l5 = ["c"]
 6)通过对li列表的切⽚形成新的列表l6,l6 = ["b","a",3]
 ```
+```python
+# 2题
+
+li = [1, 3, 2, "a", 4, "b", 5,"c"]
+print("1)通过对li列表的切⽚形成新的列表l1,l1 = [1,3,2]:", li[:3])
+# print(":",)
+print("2)通过对li列表的切⽚形成新的列表l2,l2 = [\"a\",4,\"b\"]:", li[3:6])
+l3 = li[:3] + li[3:7]
+l3.remove("a")
+l3.remove("b")
+l3.remove(3)
+# l3 = filter(str.isdigit, [list(ll) for ll in li])
+print("3)通过对li列表的切⽚形成新的列表l3,l3 = [\"1,2,4,5]:", l3)
+l4  =  []
+l4.append(li[1])
+l4.append(li[3])
+l4.append(li[5])
+print("4)通过对li列表的切⽚形成新的列表l4,l4 = [3,'a','b']:", l4)
+l5 = list(li[-1])
+print("5)通过对li列表的切⽚形成新的列表l5,l5 = [\"c\"]:", l5)
+l4.reverse()
+l6 = l4
+print("6)通过对li列表的切⽚形成新的列表l6,l6 = [\"b\",\"a\",3]:", l6)
+```
 
 ### 3,写代码，有如下列表，按照要求实现每⼀个功能。
-```python
+```
     lis = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
     1)将列表lis中的"tt"变成⼤写（⽤两种⽅式）。
     2)将列表中的数字3变成字符串"100"（⽤两种⽅式）。
     3)将列表中的字符串"1"变成数字101（⽤两种⽅式）。
 ```
+```python
+lis = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+print("1）法一：", lis[3][2][1][0].upper(), "1）法二：", lis[-3][-2][1][0].upper())
+lis[1] = 100
+lis[3][2][1][1] = 100
+print("2)法一：", lis)
+lis2 = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+lis2.remove(3)
+lis2[2][2][1].remove(3)
+lis2.insert(1, 100)
+lis2[3][2][1].insert(1, 100)
+print("2)法二：", lis2)
+lis3 = [2, 3, "k", ["qwe", 20, ["k1", ["tt", 3, "1"]], 89], "ab", "adv"]
+lis3[3][2][1][2] = 101
+print("3)法一：", lis3)
+lis3[3][2][1].remove(101)
+lis3[3][2][1].insert(2, 101)
+print(lis3)
+```
+
 ### 4,请⽤代码实现：
 ```python
 li = ["lex", "eric", "rain"]
     利⽤下划线将列表的每⼀个元素拼接成字符串"lex_eric_rain"
 ```
+```python
+# 第4题：
+li = ["lex", "eric", "rain"]
+# su1 = "_"
+print("_".join(li))
+```
 
 ### 5.利⽤for循环和range打印出下⾯列表的索引。
-```python
+```
     li = ["alex", "WuSir", "ritian", "barry", "wenzhou"]
 ```
-### 6.利⽤for循环和range找出100以内所有的偶数并将这些偶数插⼊到⼀个新列表中。
-
-### 7.利⽤for循环和range 找出50以内能被3整除的数，并将这些数插⼊到⼀个新列表中。
-
-### 8.利⽤for循环和range从100~1，倒序打印。
-### 9.利⽤for循环和range从100~10，倒序将所有的偶数添加到⼀个新列表中，然后对列表的元素进⾏筛选，将能被4整除的数留下来。
-### 10，利⽤for循环和range，将1-30的数字⼀次添加到⼀个列表中，并循环这个列表，将能被3整除的数改成*。
-### 11，查找列表li中的元素，移除每个元素的空格，并找出以"A"或者"a"开头，并以"c"结尾的所有元素，并添加到⼀个新列表中,最后循环打印这个新列表。
 ```python
+# 第5题
+li = ["alex", "WuSir", "ritian", "barry", "wenzhou"]
+for key in range(len(li)):
+    print("key:", key)
+```
+### 6.利⽤for循环和range找出100以内所有的偶数并将这些偶数插⼊到⼀个新列表中。
+```python
+# 第6题
+lst =[Num for Num in range(1, 101) if Num % 2 == 0]
+# lst = []
+# for Num in range(1, 101):
+#     if Num % 2 == 0:
+#         lst.append(Num)
+# print(lst)
+```
+### 7.利⽤for循环和range 找出50以内能被3整除的数，并将这些数插⼊到⼀个新列表中。
+```python
+
+# 第7题
+lst =[Num for Num in range(1, 51) if Num % 3 == 0]
+# lst = []
+# for Num in range(1, 51):
+#     if Num % 3 == 0:
+#         lst.append(Num)
+# print(lst)
+```
+### 8.利⽤for循环和range从100~1，倒序打印。
+```python
+# 第8题
+lst =[Num for Num in range(100, 0, -1)]
+# lst = []
+# for Num in range(100, 0, -1):
+#         lst.append(Num)
+# print(lst)
+```
+### 9.利⽤for循环和range从100~10，倒序将所有的偶数添加到⼀个新列表中，然后对列表的元素进⾏筛选，将能被4整除的数留下来。
+```python
+# 第9题
+lst = [Num for Num in range(100, 9, -1) if Num % 2 == 0]
+print(lst)
+lst2 = [num for num in lst if num % 4 == 0]
+print(lst2)
+# lst = []
+# for Num in range(100, 9, -1):
+#     if Num % 2 == 0:
+#         lst.append(Num)
+# print(lst)
+```
+### 10，利⽤for循环和range，将1-30的数字⼀次添加到⼀个列表中，并循环这个列表，将能被3整除的数改成*。
+```python
+# 第10题：
+lst =[Num for Num in range(1, 31)]
+for key, value in enumerate(lst):
+    if value % 3 == 0:
+        lst.remove(value)
+        lst.insert(key, "*")
+print(lst)
+```
+### 11，查找列表li中的元素，移除每个元素的空格，并找出以"A"或者"a"开头，并以"c"结尾的所有元素，并添加到⼀个新列表中,最后循环打印这个新列表。
+```
 li = ["TaiBai ", “le xC", “AbC ", "egon", " ri TiAn", "WuSir", " aqc"]
+```
+```python
+li1 = []
+li = ["TaiBai ", "le xC", "AbC ", "egon", " ri TiAn", "WuSir", " aqc"]
+for value in li:
+    value2 = value.split(" ")
+    value1 = "".join(value2)
+    if value1.startswith("A") or value1.startswith("a") or value1.endswith("c"):
+        li1.append(value1)
+print(li1)
 ```
 ### 12，开发敏感词语过滤程序，提示⽤户输⼊评论内容，如果⽤户输⼊的内容中包含特殊的字符：
 ```python
@@ -125,8 +264,36 @@ li = ["TaiBai ", “le xC", “AbC ", "egon", " ri TiAn", "WuSir", " aqc"]
     加到⼀个列表中；如果⽤户输⼊的内容没有敏感词汇，则直接添加到上述的列
     表中。
 ```
-### 13，有如下列表
 ```python
+# 第12题
+## 法1(集合实现)：
+li1 = []
+li = ["苍老师", "东京热", "武藤兰", "波多野结衣"]
+se1 = set(li)
+ca = input("请输入评论内容：")
+kk = set()
+kk.add(ca)
+# uu = se1 & kk
+if se1 & kk:
+    li1.append("*"*len(ca))
+else:
+    li1.append(ca)
+print(se1)
+print(kk)
+print(li1)
+
+## 法2（列表实现）：
+ca1 = input("请输入评论内容2：")
+li3 = [ca1]
+li4 = []
+if ca1 in li:
+    li4.append("*"*len(ca1))
+else:
+    li4.append(ca1)
+print(li4)
+```
+### 13，有如下列表
+```
 li = [1, 3, 4, "lex", [3, 7, 8, "TaiBai"], 5, "RiTiAn"]
 循环打印列表中的每个元素，遇到列表则再循环打印出它⾥⾯的元素。
 我想要的结果是：
@@ -141,13 +308,44 @@ li = [1, 3, 4, "lex", [3, 7, 8, "TaiBai"], 5, "RiTiAn"]
 5
 ritian
 ```
-### 14. 把班级学⽣数学考试成绩录⼊到⼀个列表中: 并求平均值. 要求: 录⼊的时候要带着⼈名录⼊, 例如: 张三_44
-
-### 15. 敲七游戏. 从0开始数数. 遇到7或者7的倍数要在桌上敲⼀下. 编程来完成敲七
 ```python
+li = [1, 3, 4, "lex", [3, 7, 8, "TaiBai"], 5, "RiTiAn"]
+for su in li:
+    if type(su) != list:
+        print(su)
+    else:
+        for su1 in su:
+            print(su1)
+```
+
+### 14. 把班级学⽣数学考试成绩录⼊到⼀个列表中: 并求平均值. 要求: 录⼊的时候要带着⼈名录⼊, 例如: 张三_44
+```python
+# 第14题
+Sum1 = []
+while True:
+    score = input("请输入您的姓名和成绩格式如：张三_44,输入完毕输#号结束：")
+    if score == "#":
+        break
+    else:
+        Sm = int("".join(list(filter(str.isdigit, score))))
+        Sum1.append(Sm)
+print("数学考试平均分为：", sum(Sum1)/len(Sum1))
+```
+### 15. 敲七游戏. 从0开始数数. 遇到7或者7的倍数要在桌上敲⼀下. 编程来完成敲七
+```
 如：输入10
 lst = [1,2,3,4,5,6,"咣",8,9,10]
 
+```
+```python
+# 第15题
+Qqn = int(input("请输入一个敲7数字："))
+lst = [Num for Num in range(1, Qqn)]
+for key, value in enumerate(lst):
+    if value % 7 == 0:
+        lst.remove(value)
+        lst.insert(key, "咣")
+print(lst)
 ```
 ### 16. (升级题) 编写程序. 完成⼼动⼥⽣的筛选. (升级题)
 ```python
@@ -158,11 +356,62 @@ lst = [1,2,3,4,5,6,"咣",8,9,10]
 运⾏效果:
 
 ``` 
+```python
+# 第16题
+nlis = []
+nlis1 = []
+nlis2 = []
+i = 10
+j = 3
+k = 1
+while i:
+    name = input("请依次输入十位心仪女生姓名：")
+    nlis.append(name)
+    i -= 1
+for key, value in enumerate(nlis):
+    print("女生名字为：", value, "序号为：", key)
+while j:
+    index = int(input("请依次选择三位心仪女生序号输入："))
+    # if i >= index >= 0:
+    nlis1.append(nlis[index])
+    # else:
+    #     print("请输入正确序号!")
+    j -= 1
+for key, value in enumerate(nlis1):
+    print("女生名字为：", value, "序号为：", key)
+while k:
+    index1 = int(input("请最终选择一位心仪女生序号输入："))
+    # if j >= index1 >= 0:
+    nlis2.append(nlis1[in
+                 dex1])
+    # else:
+    #     print("请输入正确序号!")
+    k -= 1
+for key, value in enumerate(nlis2):
+    print("用户心动的女生是", value)
+```
 # 列表默写内容
 ## 1，将列表的增删改查不同的⽅法全部写出来，
   - 例如：增：有三种，append：在后⾯添加。Insert按照索引添加，extend：迭代着添加。
+- 增
+  - List.append()
+  - insert(index,x)
+  - list.copy()
+  - list.extend
+- 删
+  - list.pop()
+  - list.remove()
+  - del
+  - list.clear()
+- 改
+  - lis[index] = "string"
+  - remove() --- append()/insert() 先删后插入
+- 查
+  - for 迭代
+  - list.count() # 统计元素频次
+  - list.index() # 找出元素索引位置
 ## 2，默写第,13题的实现的代码。
-
+第一个for遍历列表，不是列表输出，是列表类型继续for遍历输出
 
 # 字典作业
 
@@ -172,7 +421,19 @@ lst = [1,2,3,4,5,6,"咣",8,9,10]
     b. 请问tu变量中的第一个元素 "lex" 是否可被修改？
     c. 请问tu变量中的"k2"对应的值是什么类型？是否可以被修改？如果可以，请在其中添加一个元素 "Seven"
     d. 请问tu变量中的"k3"对应的值是什么类型？是否可以被修改？如果可以，请在其中添加一个元素 "Seven"
-
+```python
+# 第1题
+# - a元组是有序固定序列，不能删改任意数据，但元素是可修改的数据（如列表）能更改元素内部数据。
+# - b. 不可修改
+# - c. 列表类型
+# - d.元组类型，不能修改,不可添加
+tu = ("lex", [11, 22, {"k1": 'v1', "k2": ["age", "name"], "k3": (11,22,33)}, 44])
+# tu[0] = 34 #不可修改
+print(tu[0])
+tu[1][2].get("k2").append("seven")
+print(tu[1][2].get("k2"))  # c
+print(tu[1][2].get("k3"))  # d
+```
 ### 2， 字典dic,dic = {'k1': "v1", "k2": "v2", "k3": [11,22,33]}
     a.请循环输出所有的key
     b.请循环输出所有的value
@@ -181,6 +442,21 @@ lst = [1,2,3,4,5,6,"咣",8,9,10]
     e. 请在修改字典中 "k1" 对应的值为 "alex"，输出修改后的字典
     f. 请在k3对应的值中追加一个元素 44，输出修改后的字典
     g. 请在k3对应的值的第 1 个位置插入个元素 18，输出修改后的字典
+```python
+# 第2题
+dic = {'k1': "v1", "k2": "v2", "k3": [11,22,33]}
+print(dic.keys())  # a
+print(dic.values())  # b
+print(dic.items())  # c
+dic["k4"] = "v4"  # d
+print(dic)
+dic["k1"] = "alex"  # e
+print(dic)
+dic.get("k3").append(44)  # f
+print(dic)
+dic.get("k3").insert(0, 18)  # g
+print(dic)
+```
 
 ### 3，题目如下：
     av_catalog = {
