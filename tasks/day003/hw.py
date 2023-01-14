@@ -256,24 +256,78 @@
 # print(dic)
 
 # 第3题
-av_catalog = {
-"欧美":{
-    "www.youporn.com": ["很多免费的,世界最大的","质量一般"],
-    "www.pornhub.com": ["很多免费的,也很大","质量比yourporn高点"],
-    "letmedothistoyou.com": ["多是自拍,高质量图片很多","资源不多,更新慢"],
-    "x-art.com":["质量很高,真的很高","全部收费,屌丝请绕过"]
-},
-"日韩":{
-    "tokyo-hot":["质量怎样不清楚,个人已经不喜欢日韩范了","verygood"]
-},
-"大陆":{
-    "1024":["全部免费,真好,好人一生平安","服务器在国外,慢"]
-}
-}
+# av_catalog = {
+# "欧美":{
+#     "www.youporn.com": ["很多免费的,世界最大的","质量一般"],
+#     "www.pornhub.com": ["很多免费的,也很大","质量比yourporn高点"],
+#     "letmedothistoyou.com": ["多是自拍,高质量图片很多","资源不多,更新慢"],
+#     "x-art.com":["质量很高,真的很高","全部收费,屌丝请绕过"]
+# },
+# "日韩":{
+#     "tokyo-hot":["质量怎样不清楚,个人已经不喜欢日韩范了","verygood"]
+# },
+# "大陆":{
+#     "1024":["全部免费,真好,好人一生平安","服务器在国外,慢"]
+# }
+# }
+#
+# av_catalog.get("欧美").get("www.youporn.com").insert(1, "量很大")  # a
+# print(av_catalog)
+# av_catalog.get("欧美").get("x-art.com").remove("全部收费,屌丝请绕过")  # b
+# print(av_catalog)
+# av_catalog.get("欧美").get("x-art.com").append("金老板最喜欢这个")  # c
+# print(av_catalog)
+# av_catalog.get("日韩").get("tokyo-hot")[-1] = av_catalog.get("日韩").get("tokyo-hot")[-1].upper()  # d
+# print(av_catalog)
+# av_catalog.get("大陆")[1048] = ['一天就封了']   # e
+# print(av_catalog)
+# av_catalog.get("欧美").pop("letmedothistoyou.com")  # f
+# print(av_catalog)
+# av_catalog.get("大陆").get("1024").insert(0,  "可以爬下来")  # g
+# print(av_catalog)
+#
+# # 第4题
+# st = "k:1|k1:2|k2:3|k3:4"
+# st1 = st.split("|")
+# ls = []
+# for v in st1:
+#     st2 = v.split(":")
+#     ls.append(tuple(st2))
+# ls1 = dict(ls)
+# print(ls1)
 
-av_catalog.get("欧美").get("www.youporn.com").insert(1, "量很大")  # a
-print(av_catalog)
-av_catalog.get("欧美").get("x-art.com").insert(1, "量很大")  # a
+# 第5题
+# dc = {'k1': [], 'k2': []}
+# li= [11,22,33,44,55,66,77,88,99,90]
+# for v in li:
+#     if v >= 66:
+#         dc.get("k1").append(v)
+#     else:
+#         dc.get("k2").append(v)
+# print(dc)
+
+# 第6题
+goods = [{"name": "电脑", "price": 1999},
+         {"name": "鼠标", "price": 10},
+         {"name": "游艇", "price": 20},
+         {"name": "美女", "price": 998}, ]
+
+for k, v in enumerate(goods):
+    print(k, v, v.items())
+
+
+
+
+
+
+
+
+
+
+# for i in range(1, 10):
+#     for j in range(1, i+1):
+#         print(j, "+", i, "=", i+j, end=" ")
+#     print("")
 
 
 
