@@ -551,8 +551,58 @@ print(dc)
     2：用户输入选择的商品序号，然后打印商品名称及商品价格
     3：如果用户输入的商品序号有误，则提示输入有误，并重新输入。
     4：用户输入Q或者q，退出程序。
+```python
+goods = [{"name": "电脑", "price": 1999},
+         {"name": "鼠标", "price": 10},
+         {"name": "游艇", "price": 20},
+         {"name": "美女", "price": 998}, ]
 
+lst = []
+for v in goods:
+    lst1 = []
+    for value in v.values():
+        lst1.append(value)
+    # print(type(a))
+    lst.append(lst1)
+for key, va in enumerate(lst):
+    print(key + 1, va)
+while True:
+    Init = input("请输入选择的商品序号或输入Q或者q，退出程序:")
+    if Init == "1" or Init == "2" or Init == "3" or Init == "4":
+        i = int(Init) - 1
+        print(lst[i])
+    elif Init == "Q" or Init == "q":
+        break
+    else:
+        print("输入有误，请重新输入！")
+```
 
 ## 字典默写内容。
     1)字典的增删改查。
     2)day002的第7题代码的默写。
+```python
+#1)
+#    - 字典的增删改查
+
+# 增 （4法）
+#  浅拷贝、赋值增改、setdefault查增、fromkeys序列号新增字典
+
+# 删
+
+# pop删键/键值 del["key"],不存在返回KeyError
+# popitem 删键值，不存在返回KeyError
+# clear 清空字典
+
+# 改  同增差不多直接赋值增改
+
+# 查
+
+# get 按键查，不在返回none或指定值
+# 返回视图 keys items values 返回键，项目，和值视图
+
+#2)
+
+#法1，字符串的count（）方法统计
+#法2，集合方法实现
+#法3，字符串in 和 字符串index（）方法实现
+```

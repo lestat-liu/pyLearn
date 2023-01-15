@@ -312,27 +312,29 @@ goods = [{"name": "电脑", "price": 1999},
          {"name": "游艇", "price": 20},
          {"name": "美女", "price": 998}, ]
 
-for k, v in enumerate(goods):
-    print(k, v, v.items())
-
-
-
-
-
-
-
-
-
+lst = []
+for v in goods:
+    lst1 = []
+    for value in v.values():
+        lst1.append(value)
+    # print(type(a))
+    lst.append(lst1)
+for key, va in enumerate(lst):
+    print(key + 1, va)
+while True:
+    Init = input("请输入选择的商品序号或输入Q或者q，退出程序:")
+    if Init == "1" or Init == "2" or Init == "3" or Init == "4":
+        i = int(Init) - 1
+        print(lst[i])
+    elif Init == "Q" or Init == "q":
+        break
+    else:
+        print("输入有误，请重新输入！")
 
 # for i in range(1, 10):
 #     for j in range(1, i+1):
 #         print(j, "+", i, "=", i+j, end=" ")
 #     print("")
-
-
-
-
-
 
 
 # print(type(li))
