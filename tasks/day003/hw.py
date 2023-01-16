@@ -348,7 +348,7 @@ while True:
     else:
         try:
             user_input = int(user_input)
-            if user_input > 0 and user_input < len(goods):
+            if 0 < user_input <= len(goods):
                 print('{} {} {}'.format(user_input,goods[user_input-1]['name'],goods[user_input-1]["price"]))
             else:
                 print("输入有误，请重新输入")
