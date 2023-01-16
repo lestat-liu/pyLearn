@@ -307,29 +307,53 @@
 # print(dc)
 
 # 第6题
+# goods = [{"name": "电脑", "price": 1999},
+#          {"name": "鼠标", "price": 10},
+#          {"name": "游艇", "price": 20},
+#          {"name": "美女", "price": 998}, ]
+#
+# lst = []
+# for v in goods:
+#     lst1 = []
+#     for value in v.values():
+#         lst1.append(value)
+#     # print(type(a))
+#     lst.append(lst1)
+# for key, va in enumerate(lst):
+#     print(key + 1, va)
+# while True:
+#     Init = input("请输入选择的商品序号或输入Q或者q，退出程序:")
+#     if Init == "1" or Init == "2" or Init == "3" or Init == "4":
+#         i = int(Init) - 1
+#         print(lst[i])
+#     elif Init == "Q" or Init == "q":
+#         break
+#     else:
+#         print("输入有误，请重新输入！")
+
+
 goods = [{"name": "电脑", "price": 1999},
          {"name": "鼠标", "price": 10},
          {"name": "游艇", "price": 20},
          {"name": "美女", "price": 998}, ]
-
-lst = []
-for v in goods:
-    lst1 = []
-    for value in v.values():
-        lst1.append(value)
-    # print(type(a))
-    lst.append(lst1)
-for key, va in enumerate(lst):
-    print(key + 1, va)
 while True:
-    Init = input("请输入选择的商品序号或输入Q或者q，退出程序:")
-    if Init == "1" or Init == "2" or Init == "3" or Init == "4":
-        i = int(Init) - 1
-        print(lst[i])
-    elif Init == "Q" or Init == "q":
+    print('-'*50)
+    print('序号 商品名称 价格')
+    for goods_i in goods:
+        print('{} {} {}'.format(goods.index(goods_i)+1,goods_i["name"],goods_i["price"]))
+    user_input = input('请输入商品编号（输入Q或者q，退出程序）：')
+
+    if user_input == 'q' or user_input == 'Q':
         break
     else:
-        print("输入有误，请重新输入！")
+        try:
+            user_input = int(user_input)
+            if user_input > 0 and user_input < len(goods):
+                print('{} {} {}'.format(user_input,goods[user_input-1]['name'],goods[user_input-1]["price"]))
+            else:
+                print("输入有误，请重新输入")
+        except Exception as e:
+            print("输入有误，请重新输入")
 
 # for i in range(1, 10):
 #     for j in range(1, i+1):
