@@ -331,29 +331,38 @@
 #     else:
 #         print("输入有误，请重新输入！")
 
+# def get_int(msg):
+#     while True:
+#         try:
+#             i = int(input(msg))
+#             return i
+#         except ValueError as err:
+#             print("输入有误，重新输入 ！")
+# age = get_int("输入年龄：")
+# print(age)
 
-goods = [{"name": "电脑", "price": 1999},
-         {"name": "鼠标", "price": 10},
-         {"name": "游艇", "price": 20},
-         {"name": "美女", "price": 998}, ]
-while True:
-    print('-'*50)
-    print('序号 商品名称 价格')
-    for goods_i in goods:
-        print('{} {} {}'.format(goods.index(goods_i)+1,goods_i["name"],goods_i["price"]))
-    user_input = input('请输入商品编号（输入Q或者q，退出程序）：')
-
-    if user_input == 'q' or user_input == 'Q':
-        break
-    else:
-        try:
-            user_input = int(user_input)
-            if 0 < user_input <= len(goods):
-                print('{} {} {}'.format(user_input,goods[user_input-1]['name'],goods[user_input-1]["price"]))
-            else:
-                print("输入有误，请重新输入")
-        except Exception as e:
-            print("输入有误，请重新输入")
+# goods = [{"name": "电脑", "price": 1999},
+#          {"name": "鼠标", "price": 10},
+#          {"name": "游艇", "price": 20},
+#          {"name": "美女", "price": 998}, ]
+# while True:
+#     print('-'*50)
+#     print('序号 商品名称 价格')
+#     for goods_i in goods:
+#         print('{} {} {}'.format(goods.index(goods_i)+1,goods_i["name"],goods_i["price"]))
+#     user_input = input('请输入商品编号（输入Q或者q，退出程序）：')
+#
+#     if user_input == 'q' or user_input == 'Q':
+#         break
+#     else:
+#         try:
+#             user_input = int(user_input)
+#             if 0 < user_input <= len(goods):
+#                 print('{} {} {}'.format(user_input,goods[user_input-1]['name'],goods[user_input-1]["price"]))
+#             else:
+#                 print("输入有误，请重新输入")
+#         except Exception as e:
+#             print("输入有误，请重新输入")
 
 # for i in range(1, 10):
 #     for j in range(1, i+1):
@@ -368,3 +377,4 @@ while True:
 
 # list_1 = [x for x in range(1, 10) if x % 2 == 0]
 # print(list_1)
+
