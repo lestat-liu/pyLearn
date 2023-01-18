@@ -61,6 +61,9 @@ for source_i in dic:
         result[source_i['id_number']]['总异常时间'] = abnormal_time
         result[source_i['id_number']]['{}率'.format(source_i['alarm_type'])] = '{}%'.format(
             round(source_i['异常时间'] / all_time * 100, 2))
+        if time.strptime(source_i['time'], '%Y-%m-%d %H:%M:%S') < time.strptime(
+                result[source_i['id_number']]['begin_time'], '%Y-%m-%d %H:%M:%S'):
+            result[source_i['id_number']]['begin_time'] = source_i['time']
     else:
         result[source_i['id_number']] = {
             '总异常时间': source_i['异常时间'],
