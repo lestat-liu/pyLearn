@@ -71,7 +71,7 @@ for source_i in dic:
             'address': source_i['address'],
             'begin_time': time.strftime('%Y-%m-%d %H:%M:%S'),
             '正常时间': '{}h'.format((all_time - source_i['异常时间']) / 60 / 60),
-            '{}率'.format(source_i['alarm_type']): '{}%'.format(source_i['异常时间'] / all_time * 100),
+            '{}率'.format(source_i['alarm_type']): '{}%'.format(round(source_i['异常时间'] / all_time * 100, 2)),
 
         }
 
